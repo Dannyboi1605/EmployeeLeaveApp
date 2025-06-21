@@ -16,12 +16,18 @@ class MainActivity : ComponentActivity() {
                 when (currentScreen) {
                     "menu" -> MainMenuScreen(
                         onNavigateToLeaveType = { currentScreen = "leaveType" },
-                        onNavigateToLeaveBalance = { currentScreen = "leaveBalance" }
+                        onNavigateToLeaveBalance = { currentScreen = "leaveBalance" },
+                        onNavigateToLeaveApproval = { currentScreen = "leaveApproval" },
+                        onNavigateToLeaveStatus = { currentScreen = "leaveStatus" }
+
                     )
                     "leaveType" -> LeaveTypeManagementScreen(onBack = { currentScreen = "menu" })
                     "leaveBalance" -> LeaveBalanceScreen(onBack = { currentScreen = "menu" })
+                    "leaveApproval" -> LeaveApprovalScreen(onBack = { currentScreen = "menu" })
+
                 }
             }
         }
     }
 }
+

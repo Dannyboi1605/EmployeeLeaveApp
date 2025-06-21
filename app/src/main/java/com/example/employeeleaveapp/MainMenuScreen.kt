@@ -12,7 +12,9 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun MainMenuScreen(
     onNavigateToLeaveType: () -> Unit,
-    onNavigateToLeaveBalance: () -> Unit
+    onNavigateToLeaveBalance: () -> Unit,
+    onNavigateToLeaveApproval: () -> Unit,
+    onNavigateToLeaveStatus: () -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -42,6 +44,23 @@ fun MainMenuScreen(
             ) {
                 Text("Leave Balance Management")
             }
+            Button(
+                onClick = onNavigateToLeaveApproval,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Leave Approval")
+            }
+
+            Button(
+                onClick = onNavigateToLeaveStatus,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Leave Status")
+            }
+
+
+
+
         }
     }
 }
@@ -51,6 +70,8 @@ fun MainMenuScreen(
 fun PreviewMainMenuScreen() {
     MainMenuScreen(
         onNavigateToLeaveType = {},
-        onNavigateToLeaveBalance = {}
+        onNavigateToLeaveBalance = {},
+        onNavigateToLeaveApproval = {},
+                onNavigateToLeaveStatus = {}
     )
 }
